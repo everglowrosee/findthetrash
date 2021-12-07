@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load pybo_filter %}
+{% block content %}
+    <div style="margin-left: 20px;">
+    <h2>mypage</h2>
+    <p><img src="/static/image/stardol2.png" alt = "profile" style="width:200px;height:250px;">
+      
+      <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" 
+      style="font-size:20px";input type="button" onclick=href="{% url 'common:change' %}">회원정보변경</a>
+  
+      <table class="table table-secondary bg-info text-white table-bordered table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <td>{{ user.username }}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>이름</th>
+            <td>{{ user.first_name }}</td>
+          </tr>
+          <tr>
+            <th>연락처</th>
+            <td>{{ user.last_name }}</td>
+          </tr>
+          <tr>
+            <th>이메일</th>
+            <td>{{ user.email }}</td>
+          </tr>
+          <tr>
+            <th>초록점수</th>
+            <td>{{ user.profile.greenpoint }}</td>
+          </tr>
+          <tr>
+            <th>쿠폰</th>
+            <td>{{ user.profile.coupon }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    
+    </div>
+</br>
+
+<a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!" 
+style="font-size:20px";input type="button" onclick=href="{% url 'pybo:points_detail' user.id %}">초록점수상세</a>
+
+<p>ID : {{ user.username }} </p>
+<p>이름(닉네임) : {{ user.first_name }} </p>
+<p>연락처 : {{ user.last_name }} </p>
+<p>이메일 : {{ user.email }} </p>
+<p>초록점수 : {{ user.profile.greenpoint }} </p>
+<p>쿠폰 : {{ user.profile.coupon }} </p>
+</br>
+    {% endblock %}
+

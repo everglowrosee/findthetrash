@@ -1,0 +1,4 @@
+.idea
+db.mysql
+*.pyc
+__pycache__
