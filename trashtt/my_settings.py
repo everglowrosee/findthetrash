@@ -4,7 +4,7 @@ DATABASES = {
         'NAME': 'mysite',
         'USER': 'root',
         'PASSWORD': '980324',
-        'HOST': '34.71.117.198',
+        'HOST': '104.198.230.69',
         'PORT': '3306',
     }
 }
